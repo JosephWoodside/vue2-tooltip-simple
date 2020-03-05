@@ -1,6 +1,6 @@
 {
   "name": "vue2-tooltip-simple",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple tooltip to make your life easier!",
   "main": "dist/vue2-tooltip-simple.ssr.js",
   "browser": "dist/vue2-tooltip-simple.esm.js",
