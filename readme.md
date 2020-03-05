@@ -56,7 +56,7 @@ export default {
 ```
 
 This would result in:
-![gif](https://i.imgur.com/N4BdJux.gifv)
+![gif](https://i.imgur.com/N4BdJux.gif)
 
 ## Options
 
