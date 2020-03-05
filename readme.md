@@ -1,7 +1,5 @@
 # vue2-tooltip-simple
 
-> A simple tooltip to make your life easier!
-
 A lightweight, JS focused tooltip component for vue2.
 
 ## Installing / Getting started
@@ -62,6 +60,6 @@ This would result in:
 
 | Prop      | Required | Type   | Default   | Details                                                                                                                                                                                                                                                                      |
 | --------- | -------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| elementId | true     | String | ''        | The element that the tooltip will mount to                                                                                                                                                                                                                                   |
+| elementId | true     | String |           | The element that the tooltip will mount to                                                                                                                                                                                                                                   |
 | classes   | false    | String | 'primary' | The style of the tooltip. Options are 'primary', 'info', 'warning', 'error'                                                                                                                                                                                                  |
 | mode      | false    | String | 'hover'   | The behavior of the tooltip. Options are 'hover', 'click'. 'hover' will detect when the cursor enters the bounding box of the element the tooltip is mounted to, and will follow the cursor. 'click' will only show on click, and position itself above the mounted element. |
