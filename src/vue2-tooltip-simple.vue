@@ -14,7 +14,7 @@
 **
 **********************************************************-->
 <template>
-  <div class="base-container" :class="classes" v-show="!hidden" id="tooltip">
+  <div class="base-container" :class="classes" v-show="!hidden" :id="id">
     <div>
       <slot name="content"></slot>
     </div>
@@ -44,6 +44,11 @@ export default {
       hidden: true,
       tooltipElement: null
     };
+  },
+  computed() {
+    id() {
+      return `tooltip-${this.elementId}`
+    }
   },
   mounted() {
     this.tooltipElement = document.getElementById("tooltip");
