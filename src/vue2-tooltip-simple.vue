@@ -54,7 +54,7 @@ export default {
     },
   },
   mounted() {
-    this.tooltipElement = document.getElementById("tooltip");
+    this.tooltipElement = document.getElementById(this.tooltipId);
     if (this.elementId.length !== 0) {
       this.mountListeners(this.elementId);
     }
