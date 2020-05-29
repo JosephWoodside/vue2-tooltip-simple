@@ -28,27 +28,30 @@ export default {
     classes: {
       type: String,
       required: false,
-      default: "primary"
+      default: "primary",
     },
     elementId: {
       type: String,
-      required: true
+      required: true,
     },
     mode: {
       type: String,
-      default: "hover"
-    }
+      default: "hover",
+    },
   },
   data() {
     return {
       hidden: true,
-      tooltipElement: null
+      tooltipElement: null,
     };
   },
-  computed() {
-    id() {
-      return `tooltip-${this.elementId}`
-    }
+  computed: {
+    tooltipId() {
+      return `tooltip-${this.elementId}`;
+    },
+    triangleId() {
+      return `triangle-${this.elementId}`;
+    },
   },
   mounted() {
     this.tooltipElement = document.getElementById("tooltip");
@@ -79,7 +82,7 @@ export default {
     getOffset() {
       return {
         left: this.tooltipElement.offsetWidth / 2 - 5,
-        top: this.tooltipElement.offsetHeight + 20
+        top: this.tooltipElement.offsetHeight + 20,
       };
     },
     getElementPositionOffset() {
@@ -87,7 +90,7 @@ export default {
       const elementRect = element.getBoundingClientRect();
       return {
         left: elementRect.left - elementRect.width / 2,
-        top: elementRect.top + window.scrollY - elementRect.height * 1.65
+        top: elementRect.top + window.scrollY - elementRect.height * 1.65,
       };
     },
     mountListeners(id) {
@@ -97,7 +100,7 @@ export default {
         element.addEventListener("mouseenter", this.handleShow);
         element.addEventListener("mouseleave", this.handleHide);
 
-        document.addEventListener("mousemove", e => this.handleMouseMove(e));
+        document.addEventListener("mousemove", (e) => this.handleMouseMove(e));
       } else if (this.mode === "click") {
         element.addEventListener("click", this.handleClick);
       }
@@ -110,11 +113,13 @@ export default {
         element.removeEventListener("mouseenter", this.handleShow);
         element.removeEventListener("mouseleave", this.handleHide);
 
-        document.removeEventListener("mousemove", e => this.handleMouseMove(e));
+        document.removeEventListener("mousemove", (e) =>
+          this.handleMouseMove(e)
+        );
       } else if (this.mode === "click") {
         element.removeEventListener("click", this.handleClick);
       }
-    }
+    },
   },
   watch: {
     elementId(newId, oldId) {
@@ -130,8 +135,8 @@ export default {
         this.unMountListeners(this.elementId);
         this.mountListeners(this.elementId);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
