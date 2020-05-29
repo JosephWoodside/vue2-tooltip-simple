@@ -14,11 +14,11 @@
 **
 **********************************************************-->
 <template>
-  <div class="base-container" :class="classes" v-show="!hidden" :id="id">
+  <div class="base-container" :class="classes" v-show="!hidden" :id="tooltipId">
     <div>
       <slot name="content"></slot>
     </div>
-    <div id="triangle" :class="`triangle triangle__${classes}`"></div>
+    <div :id="triangleId" :class="`triangle triangle__${classes}`"></div>
   </div>
 </template>
 
